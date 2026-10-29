@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Google+Sans:ital,opsz,wght@0,17..18,400..700;1,17..18,400..700&display=swap');
+
+html {
+  scroll-behavior: smooth;
+}
+
+:root {
+  --fundo:#F4F7FA;
+  --cartoes:#FFFFFF;
+  --secundaria:#E6ECF2;
+  --primaria:#3FD6E8;
+  --alertas:#F2B93B;
+  --perdido:#E85A4F;
+  --encontrado:#3DDC84;
+  --texto:#14181E;
+}
+
+body {
+  background-color: var(--fundo);
+  color: var(--texto);
+  font-family: "Google Sans", sans-serif;
+  margin: 0;
+  padding: 2rem;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark{
+  --fundo:#14181E;
+  --cartoes:#1E232B;
+  --secundaria:#2A303A;
+  --primaria:#3FD6E8;
+  --alertas:#F2B93B;
+  --perdido:#E85A4F;
+  --encontrado:#3DDC84;
+  --texto:#EEF3F6;
+}
+
+.right-side p , .right-side h1{
+  color:#EEF3F6;
+}
+
+#logo {
+  height: auto;
+  width: auto;
+  display: inline-block;
+}
+
+.left-side{
+  display: block;
+  justify-content: flex-start;
+}
+
+.right-side {
+background-color: #2A303A;
+display: flex;
+flex-direction: column;
+}
+
+.right-side h3{
+color:#3FD6E8
+}
+
+#h3 {
+display: flex;
+justify-content: center;
+}
+
+#h1 {
+display: flex;
+justify-content: center;
+}
+
+#p2{
+display: flex;
+justify-content: center;
+}
+
+#p1{
+display: flex;
+justify-content: center;
+}
+
+.displayFlex {
+  display: flex;
+  justify-content: center;
+}
+
+.img img {
+  
+    flex-direction: column;
+    width: 30%;
+    border-radius: 20px;
+}
+
+#mala {
+display: flex;
+justify-content: flex-start;
+margin-left: 100px;
+}
+
+#mochila {
+display: flex;
+justify-content: flex-end;
+}
+
