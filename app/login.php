@@ -10,27 +10,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | findIt</title>
-    <link rel="stylesheet" href="/Findit/app/login.css">
+    <link rel="stylesheet" href="login.css">
 </head>
 
 <body>
-    <header>
+    <header class="metade">
         <div id="logo">
             <img src="/logo.png" alt="Logo findIt">
         </div>
     </header>
 
     <main>
-        <div class="displayFlex">
+        <section class="displayFlex">
             <div class="left-side">
                 <div class="container-sup">
-                    <div id="bemvindo">
-                        <h1>Que bom ter você de volta.</h1>
-                    </div>
+                    <h1 id="bemvindo">Que bom ter você de volta.</h1>
                     <br>
-                    <div id="msg">
-                        <p>Entre para acompanhar seus anúncios e reencontrar o que importa.</p>
-                    </div>
+                    <p id="msg">Entre para acompanhar seus anúncios e reencontrar o que importa.</p>
                 </div>
 
                 <div class="container-mid">
@@ -61,36 +57,33 @@
                 </div>
             </div>
 
-
             <div class="right-side">
-                <div id="h3">
-                    <h3>PERDEU? A GENTE ENCONTRA.</h3>
-                </div>
-                <div id="h1">
-                    <h1>Tudo pode voltar para você.</h1>
-                </div>
-                <div id="p1">
-                    <P>Uma comunidade inteira conectando pessoas aos </P><br>
-                </div>
-                <div id="p2">
-                    <p>objetos que importam.</p>
-                </div>
-                <div class="img">
-                    <div id="mala">
-                        <img src="/malaAzul.jpg" alt="Mala Azul">
+                <h3 id="h3">PERDEU? A GENTE ENCONTRA.</h3>
+                <h1 id="h1">Tudo pode voltar para você.</h1>
+                <P id="p1">Uma comunidade inteira conectando pessoas aos </P>
+                <p id="p2">objetos que importam.</p>
+                <div class="container-obj">
+                    <div class="card-left">
+                        <div class="mala">
+                            <h1>🧳</h1>
+                        </div>
+                        <p>Mala Azul</p>
+                        <p>Terminal Norte | Há 12 min</p>
                     </div>
-                    <div id="mochila">
-                        <img src="/mochila vermelha.jpg" alt="Mochila Vermelha">
+                    <div class="card-right">
+                        <div class="mochila">
+                            <h1>🎒</h1>
+                        </div>
+                        <p>Mochila Vermelha</p>
+                        <p>Parque Central</p>
                     </div>
+
                 </div>
             </div>
-        </div>
-
-
+        </section>
     </main>
-
     <footer>
-        <p>&copy; 2026 findIt. Todos os direitos reservados.</p>
+            <p>&copy; 2026 findIt. Todos os direitos reservados.</p>
     </footer>
 </body>
 

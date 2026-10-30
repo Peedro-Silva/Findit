@@ -13,6 +13,7 @@ html {
   --perdido:#E85A4F;
   --encontrado:#3DDC84;
   --texto:#14181E;
+   --fundodark:#14181E;
 }
 
 body {
@@ -36,28 +37,47 @@ body.dark{
 }
 
 .right-side p , .right-side h1{
-  color:#EEF3F6;
+  color: var(--secundaria);
 }
 
 #logo {
   height: auto;
-  width: auto;
+  width: 50%;
   display: inline-block;
 }
 
-.left-side{
-  display: block;
-  justify-content: flex-start;
+footer {
+  width: 49%;
 }
 
-.right-side {
-background-color: #2A303A;
+header{
+  width: 49%;
+}
+
+.left-side{
+  width: 45%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 2.5rem 3rem;
+  z-index: 10;
+}
+
+.right-side{
+width: 55%;
+background-color: var(--fundodark);
+color: var(--cartoes);
 display: flex;
 flex-direction: column;
+justify-content: space-between;
+padding: 10px;
+position: relative;
+overflow: hidden;
+min-height: 650px;
 }
 
 .right-side h3{
-color:#3FD6E8
+color: var(--primaria)
 }
 
 #h3 {
@@ -82,24 +102,67 @@ justify-content: center;
 
 .displayFlex {
   display: flex;
-  justify-content: center;
+  min-height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-.img img {
-  
-    flex-direction: column;
-    width: 30%;
-    border-radius: 20px;
+.img {
+  display: flex;
+  gap: 15px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding: 12px;
 }
 
-#mala {
-display: flex;
-justify-content: flex-start;
-margin-left: 100px;
+.img img{
+  width: 280px;
+  height: 190px;
+  object-fit: cover;
+  flex: 10 0 auto;
+  border-radius: 10px;
+  scroll-snap-align: start;
 }
 
-#mochila {
-display: flex;
-justify-content: flex-end;
+.container-obj {
+  margin-left: 160px;
+  display: flex;
+  justify-content: space-between;
 }
 
+.card-left p, .card-right p {
+  color: var(--texto);
+}
+
+.obj-titles {
+  display: flex;
+  justify-content: space-between;
+}
+
+.mala {
+  font-size: 1.25rem;
+  text-align: center;
+  background-color: var(--secundaria);
+  border-radius: 20px;
+}
+.mochila {
+  font-size: 1.25rem;
+  text-align: center;
+  background-color: var(--secundaria);
+  border-radius: 20px;
+}
+
+.card-left {
+  background-color: var(--cartoes);
+  gap: 30px;
+  padding: 20px;
+  border-radius: 20px;
+}
+
+.card-right {
+  background-color: var(--cartoes);
+  gap: 30px;
+  padding: 20px;
+  border-radius: 20px;
+  margin-right: 150px;
+}
