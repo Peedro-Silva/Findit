@@ -1,34 +1,54 @@
 <?php
 
-declare(strict_types=1);
+require_once __DIR__ . "/init.php";
 
-$databaseStatus = 'Conectado';
+$objetos = readAll($pdo, 'objetos');
 
-try {
-    require_once __DIR__ . '/init.php';
-    $pdo->query('SELECT 1');
-} catch (Throwable $exception) {
-    $databaseStatus = 'Indisponível';
-}
+$pesquisa  = trim($_GET['pesquisa']  ?? '');
+
 ?>
+
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Projeto Integrador</title>
-    <style>
-        body { font-family: system-ui, sans-serif; max-width: 720px; margin: 4rem auto; padding: 0 1rem; line-height: 1.5; }
-        .status { padding: 1rem; border-radius: .5rem; background: #eef6ee; }
-        code { background: #eee; padding: .15rem .3rem; border-radius: .25rem; }
-    </style>
+
+    <link rel="stylesheet" href="./css/style-index.css">
 </head>
+
 <body>
-    <h1>Projeto Integrador: Findit</h1>
-    <p>O ambiente PHP está funcionando.</p>
-    <div class="status">
-        Banco de dados: <strong><?= htmlspecialchars($databaseStatus, ENT_QUOTES, 'UTF-8') ?></strong>
+    <div class="busca">
+        <h2>Busca</h2>
+        <form action="" method="get">
+            <label for="pesquisa">O que você procura?</label>
+            <input type="text" name="pesquisa" id="pesquisa" placeholder="Pesquise aqui...">
+
+            <label for="categoria">Categoria</label>
+            <select name="categoria" id="categoria" >
+                <option value="nada"></option>
+                <option value="acessorios">Acessórios</option>
+                <option value="bolsas-e-mochilas">Bolsas e Mochilas</option>
+                <option value="documentos">Documentos</option>
+                <option value="eletronicos">Eletrônicos</option>
+                <option value="Roupas">Roupas</option>
+            </select>
+            <button type="submit">Buscar</button>
+        </form>
     </div>
-    <p>Comece a aplicação editando <code>app/index.php</code>.</p>
+    <br><br><br>
+    <div class="telaObjetos">
+        <?php foreach ($objetos as $o): ?>
+            <div class="objeto">
+                <p>Nome: <?= $o['nome'] ?></p>
+                <p>Descrição: <?= $o['descricao'] ?></p>
+                <p>Status: <?= $o['status_objeto'] ?></p>
+            </div>
+        <?php endforeach; ?>
+
+    </div>
 </body>
+
 </html>
