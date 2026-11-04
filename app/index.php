@@ -32,6 +32,7 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Projeto Integrador</title>
 
+    
     <link rel="stylesheet" href="./css/style-index.css">
 </head>
 
