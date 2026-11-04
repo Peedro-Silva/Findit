@@ -1,34 +1,90 @@
 <?php
 
-declare(strict_types=1);
+require_once __DIR__ . "/init.php";
 
-$databaseStatus = 'Conectado';
+$pesquisa  = trim($_GET['pesquisa'] ?? '');
+$categoria = $_GET['categoria'] ?? '';
 
-try {
-    require_once __DIR__ . '/init.php';
-    $pdo->query('SELECT 1');
-} catch (Throwable $exception) {
-    $databaseStatus = 'Indisponível';
+$condicoes = [];
+$params    = [];
+
+if ($pesquisa !== '') {
+    $condicoes[] = '(nome LIKE ? OR descricao LIKE ?)';
+    $params[]    = "%{$pesquisa}%";
+    $params[]    = "%{$pesquisa}%";
 }
+
+if ($categoria !== '') {
+    $condicoes[] = 'categoria = ?';
+    $params[]    = $categoria;
+}
+
+$where   = $condicoes ? implode(' AND ', $condicoes) : null;
+$objetos = readAll($pdo, 'objetos', $where, $params);
+
 ?>
+
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Projeto Integrador</title>
-    <style>
-        body { font-family: system-ui, sans-serif; max-width: 720px; margin: 4rem auto; padding: 0 1rem; line-height: 1.5; }
-        .status { padding: 1rem; border-radius: .5rem; background: #eef6ee; }
-        code { background: #eee; padding: .15rem .3rem; border-radius: .25rem; }
-    </style>
+
+    <link rel="stylesheet" href="./css/style-index.css">
 </head>
+
 <body>
-    <h1>Projeto Integrador: Findit</h1>
-    <p>O ambiente PHP está funcionando.</p>
-    <div class="status">
-        Banco de dados: <strong><?= htmlspecialchars($databaseStatus, ENT_QUOTES, 'UTF-8') ?></strong>
+    <div class="busca">
+        <form action="" method="get">
+            <label for="pesquisa">Qual é o objeto perdido?</label>
+            <input type="text" name="pesquisa" id="pesquisa" placeholder="Pesquise aqui..."
+                value="<?= htmlspecialchars($pesquisa) ?>">
+
+            <label for="categoria">Categoria</label>
+            <select name="categoria" id="categoria">
+                <option value="">Todas</option>
+                <option value="acessórios">Acessórios</option>
+                <option value="bolsas e mochilas">Bolsas e Mochilas</option>
+                <option value="documentos">Documentos</option>
+                <option value="eletrônicos">Eletrônicos</option>
+                <option value="roupas">Roupas</option>
+            </select>
+
+            <button type="submit">Buscar</button>
+        </form>
     </div>
-    <p>Comece a aplicação editando <code>app/index.php</code>.</p>
+
+    <div class="telaObjetos">
+        <?php if (!$objetos): ?>
+            <p>Não encontramos nenhum objeto</p>
+        <?php endif; ?>
+
+        <?php foreach ($objetos as $o): ?>
+            <?php if ($o['status_objeto'] == 'Perdido'): ?>
+
+                <div class="objeto">
+                    <p>Nome: <?= htmlspecialchars($o['nome']) ?></p>
+                    <p>Descrição: <?= htmlspecialchars($o['descricao']) ?></p>
+                    <p>Status: <?= htmlspecialchars($o['status_objeto']) ?></p>
+                    <p>Categoria: <?= htmlspecialchars($o['categoria']) ?></p>
+
+                    <form method="post" action="encontrei.php">
+                        <input type="hidden" name="id" value="<?= $o['id'] ?>">
+                        <button type="submit">Encontrei</button>
+                    </form>
+
+                    <?php
+                    $texto = "Objeto perdido: {$o['nome']} - {$o['descricao']}. Viu por aí? Acesse o Findit!";
+                    $link  = 'https://wa.me/?text=' . urlencode($texto);
+                    ?>
+                    <a href="<?= htmlspecialchars($link) ?>" target="_blank" rel="noopener">Compartilhar</a>
+
+                </div>
+                <?php endif; ?>
+            <?php endforeach; ?>
+
+
+    </div>
 </body>
-</html>
