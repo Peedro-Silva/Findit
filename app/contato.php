@@ -1,16 +1,22 @@
+<?php
+
+require_once __DIR__  . "/init.php";
+
+?>
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contato.css">
     <title>Contato</title>
 </head>
 <body>
-   <header>
+<header>
     <div class="marca">
         <a href="index.php">
-            <img class="logo" src="img/logo.png" alt="findIt">
+            <img class="logo" src="/css/imagens/logo.png" alt="findIt">
         </a>
 
         <img class="avatar" src="https://static.vecteezy.com/ti/vetor-gratis/p1/67451161-avatar-padrao-do-utilizador-perfil-icone-social-meios-de-comunicacao-perfil-cenario-plano-simbolo-dentro-preto-cor-volta-forma-isolado-em-transparente-fundo-pessoa-icone-genero-neutro-sinal-ilustracao-vetor.jpg" alt="Perfil">

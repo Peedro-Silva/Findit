@@ -161,7 +161,7 @@ main {
 .campoMensagem {
     display: flex;
     align-items: flex-end;
-    gap: 130px;
+    gap: 555px;
 }
 
 .mensagem {
@@ -195,21 +195,21 @@ button:hover {
 .cardContato {
     background-color: var(--cor-card);
     color: white;
-    border-radius: 12px;
-    padding: 15px 0 15px 16px;
+    border-radius: 16px;
+    padding: 25px 0 25px 24px;
 }
 
 .cardContato h3 {
-    font-size: 25px;
+    font-size: 30px;
     font-weight: normal;
-    margin: 0 0 4px 16px;
+    margin: 0 0 8px 20px;
 }
 
 .cardContato p {
-    margin: 4px 0;
-    font-size: 18px;
+    margin: 8px 0;
+    font-size: 22px;
 }
 
 .cardContato .destaque {
-    font-size: 25px;
+    font-size: 30px;
 }
