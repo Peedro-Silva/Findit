@@ -69,3 +69,10 @@
 .objeto:hover {
     transform: scale(1.01);
   }
+
+
+.objeto button:hover {
+    transform: scale(1.001);
+    background-color: #2a9158;
+    border: 1px solid #2a9158;
+  }
