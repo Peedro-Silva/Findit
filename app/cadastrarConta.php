@@ -16,7 +16,7 @@
 <body>
     <header class="metade">
         <div id="logo">
-            <img src="/Findit/app/imagens/logo.png" alt="Logo findIt">
+            <img src="/Findit/app/css/imagens/logoLight.png" alt="Logo findIt">
         </div>
     </header>
 
@@ -66,7 +66,7 @@
             </div>
 
             <div class="right-panel">
-                <img src="/Findit/app/imagens/imgright.jpg" alt="Perdeu? A gente encontra.">
+                <img src="/Findit/app/css/imagens/imgright.jpg" alt="Perdeu? A gente encontra.">
             </div>
         </section>
     </main>
