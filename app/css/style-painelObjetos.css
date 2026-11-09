@@ -1,34 +1,38 @@
 @import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
 
-.busca {
-    display: block;
-    background-color: #1e232b;
+.busca form{
+    display: flex;  
     font-family: "Momo Trust Display", sans-serif;
     justify-content: space-between;
-    margin: 0 auto;
-    width: 800px;
     border-radius: 25px;
     padding: 10px;
-    color: #eef3f6;
+    margin-bottom: 30px;
+}
+
+.filtro{
+
 }
 
 .busca input {
     margin-right: 20px;
     padding: 5px;
     border-radius: 10px;
-    border: 1px solid white;
+    border: 1px solid rgb(164, 170, 168);
+    background-color: rgb(164, 170, 168);
 }
 
 .busca select {
     margin-right: 20px;
     padding: 5px;
     border-radius: 10px;
-    border: 1px solid white;
+    border: 1px solid rgb(164, 170, 168);
+    background-color: rgb(164, 170, 168);
 }
 
 .busca button {
     margin-right: 20px;
-    padding: 5px;
+    padding: 10px;
+    width: 100px;
     background-color: blue;
     color: white;
     border-radius: 10px;
@@ -78,4 +82,20 @@
     color: black;
     border-radius: 10px;
     border: 1px solid #2fb96e;
+}
+
+.emoji {
+    background-color: #a7aaad;
+    padding: 5px;
+    border-radius: 25px;
+    width: 290px;
+    height: 235px;
+}
+
+.emoji p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    line-height: 1;
 }

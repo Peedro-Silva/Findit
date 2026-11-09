@@ -32,28 +32,35 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Painel Objetos</title>
 
-    
+
     <link rel="stylesheet" href="./css/style-painelObjetos.css">
 </head>
 
 <body>
     <div class="busca">
         <form action="" method="get">
-            <label for="pesquisa">Qual é o objeto perdido?</label>
-            <input type="text" name="pesquisa" id="pesquisa" placeholder="Pesquise aqui..."
+            <div class="filtro">
+                <label for="pesquisa">Qual é o objeto perdido?</label>
+                <input type="text" name="pesquisa" id="pesquisa" placeholder="Pesquise aqui..."
                 value="<?= htmlspecialchars($pesquisa) ?>">
+            
 
-            <label for="categoria">Categoria</label>
-            <select name="categoria" id="categoria">
-                <option value="">Todas</option>
-                <option value="acessórios">Acessórios</option>
-                <option value="bolsas e mochilas">Bolsas e Mochilas</option>
-                <option value="documentos">Documentos</option>
-                <option value="eletrônicos">Eletrônicos</option>
-                <option value="roupas">Roupas</option>
-            </select>
+            
+                <label for="categoria">Categoria</label>
+                <select name="categoria" id="categoria">
+                    <option value="">Todas</option>
+                    <option value="acessórios">Acessórios</option>
+                    <option value="bolsas e mochilas">Bolsas e Mochilas</option>
+                    <option value="documentos">Documentos</option>
+                    <option value="eletrônicos">Eletrônicos</option>
+                    <option value="roupas">Roupas</option>
+                    <option value="roupas">Outros</option>
+                </select>
+            </div>
 
-            <button type="submit">Buscar</button>
+            <div>
+                <button type="submit">Buscar</button>
+            </div>
         </form>
     </div>
 
@@ -66,8 +73,12 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
             <?php if ($o['status_objeto'] == 'Perdido'): ?>
 
                 <div class="objeto">
+                    <div class="emoji">
+                        <p><?= htmlspecialchars($o['imagemObjeto']) ?></p>
+                    </div>
                     <p>Nome: <?= htmlspecialchars($o['nome']) ?></p>
                     <p>Descrição: <?= htmlspecialchars($o['descricao']) ?></p>
+                    <p>Descrição: <?= htmlspecialchars($o['localEncontrado']) ?></p>
                     <p>Status: <?= htmlspecialchars($o['status_objeto']) ?></p>
                     <p>Categoria: <?= htmlspecialchars($o['categoria']) ?></p>
 
@@ -83,8 +94,8 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
                     <a href="<?= htmlspecialchars($link) ?>" target="_blank" rel="noopener">Compartilhar</a>
 
                 </div>
-                <?php endif; ?>
-            <?php endforeach; ?>
+            <?php endif; ?>
+        <?php endforeach; ?>
 
 
     </div>
