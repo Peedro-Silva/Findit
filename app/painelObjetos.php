@@ -36,10 +36,27 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
     <link rel="stylesheet" href="./css/style-painelObjetos.css">
 </head>
 
+<header>
+        <div class="logo">
+            <img src="imagens/logo.png">
+        </div>
+
+        <div class="menu">
+            <a href="perfil.html" class="btn-perfil">
+                <img src="imagens/perfil.png" alt="Perfil">
+            </a>
+            <a href="sobre.html">Sobre</a>
+            <a href=".html">Objetos guardados</a>
+            <a href="faq.html">Dúvidas</a>
+            <a href="contato.html">Contato</a>
+            <a href="CadastrarItem.html" class="btn-cadastrar"><button>+ Cadastrar item</button></a>
+        </div>
+    </header>
+
 <body>
     <div class="busca">
         <form action="" method="get">
-            <div class="filtro">
+            <div>
                 <label for="pesquisa">Qual é o objeto perdido?</label>
                 <input type="text" name="pesquisa" id="pesquisa" placeholder="Pesquise aqui..."
                 value="<?= htmlspecialchars($pesquisa) ?>">

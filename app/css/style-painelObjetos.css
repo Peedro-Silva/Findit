@@ -1,16 +1,67 @@
 @import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
 
-.busca form{
-    display: flex;  
+header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 70px;
+    margin-bottom: 40px;
+}
+
+.logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.menu img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.menu a {
+    text-decoration: none;
+    font-family: "Momo Trust Display", sans-serif;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.menu button {
+    background-color: #2a303c;
+    font-family: "Momo Trust Display", sans-serif;
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.busca form {
+    display: flex;
     font-family: "Momo Trust Display", sans-serif;
     justify-content: space-between;
     border-radius: 25px;
     padding: 10px;
     margin-bottom: 30px;
-}
-
-.filtro{
-
+    border-bottom: solid 2px black;
 }
 
 .busca input {
