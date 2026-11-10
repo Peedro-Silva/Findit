@@ -30,30 +30,54 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Projeto Integrador</title>
+    <title>Painel Objetos</title>
 
-    
+
     <link rel="stylesheet" href="./css/style-painelObjetos.css">
 </head>
+
+<header>
+        <div class="logo">
+            <img src="imagens/logo.png">
+        </div>
+
+        <div class="menu">
+            <a href="perfil.html" class="btn-perfil">
+                <img src="imagens/perfil.png" alt="Perfil">
+            </a>
+            <a href="sobre.html">Sobre</a>
+            <a href=".html">Objetos guardados</a>
+            <a href="faq.html">Dúvidas</a>
+            <a href="contato.html">Contato</a>
+            <a href="CadastrarItem.html" class="btn-cadastrar"><button>+ Cadastrar item</button></a>
+        </div>
+    </header>
 
 <body>
     <div class="busca">
         <form action="" method="get">
-            <label for="pesquisa">Qual é o objeto perdido?</label>
-            <input type="text" name="pesquisa" id="pesquisa" placeholder="Pesquise aqui..."
+            <div>
+                <label for="pesquisa">Qual é o objeto perdido?</label>
+                <input type="text" name="pesquisa" id="pesquisa" placeholder="Pesquise aqui..."
                 value="<?= htmlspecialchars($pesquisa) ?>">
+            
 
-            <label for="categoria">Categoria</label>
-            <select name="categoria" id="categoria">
-                <option value="">Todas</option>
-                <option value="acessórios">Acessórios</option>
-                <option value="bolsas e mochilas">Bolsas e Mochilas</option>
-                <option value="documentos">Documentos</option>
-                <option value="eletrônicos">Eletrônicos</option>
-                <option value="roupas">Roupas</option>
-            </select>
+            
+                <label for="categoria">Categoria</label>
+                <select name="categoria" id="categoria">
+                    <option value="">Todas</option>
+                    <option value="acessórios">Acessórios</option>
+                    <option value="bolsas e mochilas">Bolsas e Mochilas</option>
+                    <option value="documentos">Documentos</option>
+                    <option value="eletrônicos">Eletrônicos</option>
+                    <option value="roupas">Roupas</option>
+                    <option value="roupas">Outros</option>
+                </select>
+            </div>
 
-            <button type="submit">Buscar</button>
+            <div>
+                <button type="submit">Buscar</button>
+            </div>
         </form>
     </div>
 
@@ -66,8 +90,12 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
             <?php if ($o['status_objeto'] == 'Perdido'): ?>
 
                 <div class="objeto">
+                    <div class="emoji">
+                        <p><?= htmlspecialchars($o['imagemObjeto']) ?></p>
+                    </div>
                     <p>Nome: <?= htmlspecialchars($o['nome']) ?></p>
                     <p>Descrição: <?= htmlspecialchars($o['descricao']) ?></p>
+                    <p>Descrição: <?= htmlspecialchars($o['localEncontrado']) ?></p>
                     <p>Status: <?= htmlspecialchars($o['status_objeto']) ?></p>
                     <p>Categoria: <?= htmlspecialchars($o['categoria']) ?></p>
 
@@ -83,8 +111,8 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
                     <a href="<?= htmlspecialchars($link) ?>" target="_blank" rel="noopener">Compartilhar</a>
 
                 </div>
-                <?php endif; ?>
-            <?php endforeach; ?>
+            <?php endif; ?>
+        <?php endforeach; ?>
 
 
     </div>
