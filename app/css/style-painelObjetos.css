@@ -1,0 +1,152 @@
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
+
+header {
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    height: 70px;
+    margin-bottom: 40px;
+}
+
+.logo {
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 100%;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.menu img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.menu a {
+    text-decoration: none;
+    font-family: "Momo Trust Display", sans-serif;
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.menu button {
+    background-color: #2a303c;
+    font-family: "Momo Trust Display", sans-serif;
+    color: #ffffff;
+    border: none;
+    padding: 10px 18px;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.busca form {
+    display: flex;
+    font-family: "Momo Trust Display", sans-serif;
+    justify-content: space-between;
+    border-radius: 25px;
+    padding: 10px;
+    margin-bottom: 30px;
+    border-bottom: solid 2px black;
+}
+
+.busca input {
+    margin-right: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid rgb(164, 170, 168);
+    background-color: rgb(164, 170, 168);
+}
+
+.busca select {
+    margin-right: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    border: 1px solid rgb(164, 170, 168);
+    background-color: rgb(164, 170, 168);
+}
+
+.busca button {
+    margin-right: 20px;
+    padding: 10px;
+    width: 100px;
+    background-color: blue;
+    color: white;
+    border-radius: 10px;
+    border: 1px solid blue;
+}
+
+.telaObjetos {
+    display: flex;
+    justify-content: center;
+    background-color: #6e7279;
+    flex-wrap: wrap;
+    border-radius: 25px;
+    font-family: "Momo Trust Display", sans-serif;
+    padding: 10px;
+    margin: 0 auto;
+}
+
+.objeto {
+    background-color: #f4f7fa;
+    border-radius: 25px;
+    padding: 10px;
+    font-family: "Momo Trust Display", sans-serif;
+    margin: 10px;
+    width: 300px;
+    transition: transform 0.3s ease;
+    box-shadow: 0px 2px 10px black;
+}
+
+.objeto button {
+    margin-right: 20px;
+    padding: 5px;
+    background-color: #3ddc84;
+    color: black;
+    border-radius: 10px;
+    border: 1px solid #3ddc84;
+}
+
+.objeto:hover {
+    transform: scale(1.001);
+}
+
+.objeto button:hover {
+    transform: scale(1.01);
+    margin-right: 20px;
+    padding: 5px;
+    background-color: #2fb96e;
+    color: black;
+    border-radius: 10px;
+    border: 1px solid #2fb96e;
+}
+
+.emoji {
+    background-color: #a7aaad;
+    padding: 5px;
+    border-radius: 25px;
+    width: 290px;
+    height: 235px;
+}
+
+.emoji p {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 100px;
+    line-height: 1;
+}

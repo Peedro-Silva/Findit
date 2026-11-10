@@ -1,0 +1,122 @@
+body {
+  background-color: white;
+}
+
+p {
+  padding: 5px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+}
+
+.ordem {
+  background-color: #eef3f6;
+  border-radius: 12px;
+  position: static;
+  width: 18px;
+  color: #1e232b;
+  text-align: left;
+}
+
+.linha-titulo {
+  display: flex;
+  align-items: center;
+  /* Alinha o número e o texto verticalmente no centro */
+  gap: 8px;
+  /* Espaço horizontal entre o número e a frase */
+  margin-top: 15px;
+  /* Espaço superior para separar dos blocos de cima */
+}
+
+.linha-titulo .ordem {
+  margin: 0;
+}
+
+.grupo-campo {
+  margin-bottom: 15px;
+}
+
+.formulario {
+  margin: 5px;
+}
+
+.cadastro {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.resposta {
+  border-radius: 8px;
+  color: #2a303a;
+  display: block;
+  margin-top: 5px;
+  /* Deixa o input logo abaixo da frase */
+  width: 100%;
+}
+
+.circulos-container {
+  display: flex;
+  flex-direction: column;
+  grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.oito {
+  display: flex;
+  flex-direction: row;
+  grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
+}
+
+.circulo {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  /* centraliza as imagens no centro dos círculos */
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  position: relative;
+  background-color: #eef3f6;
+}
+
+/* Esconde o input original para aparecer apenas o emoji */
+.circulo input[type="radio"] {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.circulo:hover {
+  transform: scale(1.1);
+}
+
+/* mostra a opção selecionada */
+.circulo:has(input[type="radio"]:checked) {
+  box-shadow: 0 0 0 4px #0984e3;
+  /* borda azul de destaque */
+  transform: scale(1.05);
+}
+
+.cadastrar {
+  background-color: #eef3f6;
+  color: black;
+  border-radius: 8px;
+}
+
+.botao{
+  display: flex;
+  justify-content: center;
+}
