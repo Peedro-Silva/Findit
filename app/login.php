@@ -1,5 +1,5 @@
 <?php
-// require_once __DIR__ . "/Findit/app/init.php";
+require_once __DIR__ . "/init.php";
 
 ?>
 
@@ -34,7 +34,7 @@
                         <form action="processaLog.php" method="post">
                             <div id="email">
                                 <label for="email">E-mail corporativo ou pessoal</label><br>
-                                <input type="email" id="email" placeholder="seuemail@exemplo.com" required>
+                                <input type="email" name="email" id="email" placeholder="seuemail@exemplo.com" required>
                             </div>
 
                             <div id="senha">
