@@ -95,7 +95,6 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
                     </div>
                     <p>Nome: <?= htmlspecialchars($o['nome']) ?></p>
                     <p>Descrição: <?= htmlspecialchars($o['descricao']) ?></p>
-                    <p>Descrição: <?= htmlspecialchars($o['localEncontrado']) ?></p>
                     <p>Status: <?= htmlspecialchars($o['status_objeto']) ?></p>
                     <p>Categoria: <?= htmlspecialchars($o['categoria']) ?></p>
 
