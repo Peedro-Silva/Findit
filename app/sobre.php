@@ -5,28 +5,30 @@
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FindIt - Perguntas Frequentes</title>
     <link rel="stylesheet" href="css/sobre.css">
 </head>
+
 <body>
 
     <header>
         <div class="logo">
             <img src="imagens/logo.png">
         </div>
-        
-       <div class="menu">
-                <a href="perfil.html" class="btn-perfil">
-    <img src="imagens/perfil.png" alt="Perfil">
-</a>
-                <a href="sobre.html">Sobre</a>
-                <a href=".html">Objetos guardados</a>
-                <a href="faq.html">Dúvidas</a>
-                <a href="contato.html">Contato</a>
-                <a href="CadastrarItem.html" class="btn-cadastrar"><button>+ Cadastrar item</button></a>
+
+        <div class="menu">
+            <a href="perfil.html" class="btn-perfil">
+                <img src="imagens/perfil.png" alt="Perfil">
+            </a>
+            <a href="sobre.html">Sobre</a>
+            <a href=".html">Objetos guardados</a>
+            <a href="faq.html">Dúvidas</a>
+            <a href="contato.html">Contato</a>
+            <a href="CadastrarItem.html" class="btn-cadastrar"><button>+ Cadastrar item</button></a>
         </div>
     </header>
 
