@@ -1,4 +1,5 @@
 <?php
+
 require_once __DIR__ . "/init.php";
 
 ?>
@@ -44,7 +45,6 @@ require_once __DIR__ . "/init.php";
                 <input class="resposta" type="text" id="nome" required>
             </div>
 
-            <!-- Item 2 -->
             <div class="grupo-campo">
                 <div class="linha-titulo">
                     <p class="ordem">2</p>
@@ -53,7 +53,6 @@ require_once __DIR__ . "/init.php";
                 <input class="resposta" type="text" id="descricao" required>
             </div>
 
-            <!-- Item 3 -->
             <div class="grupo-campo">
                 <div class="linha-titulo">
                     <p class="ordem">3</p>
@@ -62,7 +61,6 @@ require_once __DIR__ . "/init.php";
                 <input class="resposta" type="text" id="local" required>
             </div>
 
-            <!-- Item 4 -->
             <div class="grupo-campo">
                 <div class="linha-titulo">
                     <p class="ordem">4</p>

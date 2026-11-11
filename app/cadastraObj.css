@@ -25,7 +25,6 @@ p {
   gap: 8px;
   /* Espaço horizontal entre o número e a frase */
   margin-top: 15px;
-  /* Espaço superior para separar dos blocos de cima */
 }
 
 .linha-titulo .ordem {
