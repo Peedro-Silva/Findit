@@ -4,6 +4,7 @@ require_once __DIR__ . "/init.php";
 
 $pesquisa  = trim($_GET['pesquisa'] ?? '');
 $categoria = $_GET['categoria'] ?? '';
+$status = $_GET['status'] ?? '';
 
 $condicoes = [];
 $params    = [];
@@ -17,6 +18,11 @@ if ($pesquisa !== '') {
 if ($categoria !== '') {
     $condicoes[] = 'categoria = ?';
     $params[]    = $categoria;
+}
+
+if ($status !== '') {
+    $condicoes[] = 'status_objeto = ?';
+    $params[]    = $status;
 }
 
 $where   = $condicoes ? implode(' AND ', $condicoes) : null;
@@ -45,11 +51,11 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
         <a href="perfil.html" class="btn-perfil">
             <img src="imagens/perfil.png" alt="Perfil">
         </a>
-        <a href="sobre.html">Sobre</a>
-        <a href=".html">Objetos guardados</a>
-        <a href="faq.html">Dúvidas</a>
-        <a href="contato.html">Contato</a>
-        <a href="CadastrarItem.html" class="btn-cadastrar"><button>+ Cadastrar item</button></a>
+        <a href="./sobre.php">Sobre</a>
+        <a href="./painelObjetos.php">Objetos guardados</a>
+        <a href="./faq.html">Dúvidas</a>
+        <a href="./contato.php">Contato</a>
+        <a href="./CadastrarItem.php" class="btn-cadastrar"><button>+ Cadastrar item</button></a>
     </div>
 </header>
 
@@ -73,6 +79,14 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
                         <option value="roupas">Roupas</option>
                         <option value="roupas">Outros</option>
                     </select>
+
+                    <label for="status">Status do Objeto</label>
+                    <select name="status" id="status">
+                        <option value="">Todos</option>
+                        <option value="perdido">Perdido</option>
+                        <option value="encontrado">Encontrado</option>
+                        <option value="abandonado">Abandonado</option>
+                    </select>
                 </div>
 
                 <div>
@@ -87,35 +101,34 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
             <?php endif; ?>
 
             <?php foreach ($objetos as $o): ?>
-                <?php if ($o['status_objeto'] == 'Perdido'): ?>
+                <div class="objeto">
+                    <div class="emoji">
+                        <p><?= htmlspecialchars($o['imagemObjeto']) ?></p>
+                    </div>
+                    <div class="conteudo">
+                        <p>Nome: <?= htmlspecialchars($o['nome']) ?></p>
+                        <p>Descrição: <?= htmlspecialchars($o['descricao']) ?></p>
+                        <p>Status: <?= htmlspecialchars($o['status_objeto']) ?></p>
+                        <p>Categoria: <?= htmlspecialchars($o['categoria']) ?></p>
+                    </div>
+                    <?php if ($o['status_objeto'] == 'Perdido'): ?>
+                        <div class="botao">
+                            <form method="post" action="encontrei.php">
+                                <input type="hidden" name="id" value="<?= $o['id'] ?>">
+                                <button type="submit">Encontrei!!</button>
+                            </form>
 
-                    <div class="objeto">
-                        <div class="emoji">
-                            <p><?= htmlspecialchars($o['imagemObjeto']) ?></p>
-                        </div>
-                        <div class="conteudo">
-                            <p>Nome: <?= htmlspecialchars($o['nome']) ?></p>
-                            <p>Descrição: <?= htmlspecialchars($o['descricao']) ?></p>
-                            <p>Status: <?= htmlspecialchars($o['status_objeto']) ?></p>
-                            <p>Categoria: <?= htmlspecialchars($o['categoria']) ?></p>
-                            <div class="botao">
-
-                                <form method="post" action="encontrei.php">
-                                    <input type="hidden" name="id" value="<?= $o['id'] ?>">
-                                    <button type="submit">Achei este objeto</button>
-                                </form>
-
-                                <?php
-                                $texto = "Objeto perdido: {$o['nome']} - {$o['descricao']}. Viu por aí? Acesse o Findit!";
-                                $link  = 'https://wa.me/?text=' . urlencode($texto);
-                                ?>
+                            <?php
+                            $texto = "Objeto perdido: {$o['nome']} - {$o['descricao']}. Viu por aí? Acesse o Findit!";
+                            $link  = 'https://wa.me/?text=' . urlencode($texto);
+                            ?>
+                            <div class="compartilhar">
                                 <a href="<?= htmlspecialchars($link) ?>" target="_blank" rel="noopener">Compartilhar</a>
                             </div>
                         </div>
-
-                    </div>
-                <?php endif; ?>
-            <?php endforeach; ?>
+                        <?php endif; ?>
+                </div>
+        <?php endforeach; ?>
         </div>
 
 
