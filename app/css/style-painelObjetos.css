@@ -7,7 +7,7 @@ header {
     align-items: center;
     padding: 0 40px;
     height: 70px;
-    margin-bottom: 40px;
+    margin-bottom: 70px;
 }
 
 .logo {
@@ -44,9 +44,9 @@ header {
 }
 
 .menu button {
-    background-color: #2a303c;
+    background-color: #ffffff;
     font-family: "Momo Trust Display", sans-serif;
-    color: #ffffff;
+    color: #000000;
     border: none;
     padding: 10px 18px;
     border-radius: 20px;
@@ -60,7 +60,7 @@ header {
     justify-content: space-between;
     border-radius: 25px;
     padding: 10px;
-    margin-bottom: 30px;
+    margin-bottom: 70px;
 }
 
 .busca input {
@@ -92,8 +92,9 @@ header {
 .telaObjetos {
     display: flex;
     justify-content: center;
-    background-color: #6e7279;
+    background-color: #f3f5f7;
     flex-wrap: wrap;
+    gap: 60px;
     border-radius: 25px;
     font-family: "Momo Trust Display", sans-serif;
     padding: 10px;
@@ -101,6 +102,7 @@ header {
 }
 
 .objeto {
+    display: flex;
     background-color: #f4f7fa;
     border-radius: 25px;
     padding: 10px;
@@ -114,6 +116,7 @@ header {
 .objeto button {
     margin-right: 20px;
     padding: 5px;
+    font-family: "Momo Trust Display", sans-serif;
     background-color: #3ddc84;
     color: black;
     border-radius: 10px;
@@ -128,6 +131,7 @@ header {
     transform: scale(1.01);
     margin-right: 20px;
     padding: 5px;
+    font-family: "Momo Trust Display", sans-serif;
     background-color: #2fb96e;
     color: black;
     border-radius: 10px;
@@ -148,4 +152,26 @@ header {
     align-items: center;
     font-size: 100px;
     line-height: 1;
+}
+
+.conteudo{
+    margin-left: 20px;
+}
+
+.botao{
+    display: flex;
+}
+
+.fundo{
+    background-color: #f3f5f7;
+    padding: 10px;
+    border-radius: 25px;
+}
+
+.compartilhar a {
+    border-radius: 15px;
+    color: #5c5757;
+    padding: 3px;
+    border: solid 2px #f2b93b;
+    text-decoration: none;
 }
