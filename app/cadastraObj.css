@@ -1,26 +1,66 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   background-color: white;
+  font-family: 'Momo Trust Display', sans-serif;
 }
 
-p {
-  padding: 5px;
-  align-items: center;
-  justify-content: center;
+header {
+  background-color: #ffffff;
   display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  height: 70px;
 }
 
-.ordem {
-  background-color: #eef3f6;
-  border-radius: 12px;
-  position: static;
-  width: 18px;
-  color: #1e232b;
-  text-align: left;
+.menu {
+  display: flex;
+  align-items: center;
+  gap: 25px;
 }
+
+.menu img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.menu a {
+  text-decoration: none;
+  color: #333333;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.menu button {
+  background-color: #eef3f6;
+  color: black;
+  border: none;
+  padding: 10px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-size: 15px;
+}
+
+h2 {
+  padding: 8px;
+  align-items: left;
+  justify-content: left;
+  display: flex;
+  margin-left: 55px;
+}
+
+
 
 .linha-titulo {
   display: flex;
   align-items: center;
+  margin-left: 35px;
   /* Alinha o número e o texto verticalmente no centro */
   gap: 8px;
   /* Espaço horizontal entre o número e a frase */
@@ -28,23 +68,32 @@ p {
   /* Espaço superior para separar dos blocos de cima */
 }
 
-.linha-titulo .ordem {
-  margin: 0;
+.ordem {
+  margin-left: 10px;
+}
+
+.formulario {
+  margin: 5px;
+  display: flex;
+  margin-left: 15px;
+  flex-direction: column;
 }
 
 .grupo-campo {
   margin-bottom: 15px;
 }
 
-.formulario {
-  margin: 5px;
+
+.grupo-campo input {
+  width: 400px;
+  margin-left: 48px;
 }
 
 .cadastro {
-  align-items: center;
-  justify-content: center;
+  align-items: flex-start;
   display: flex;
   flex-direction: column;
+  width: fit-content;
 }
 
 .resposta {
@@ -59,10 +108,11 @@ p {
 .circulos-container {
   display: flex;
   flex-direction: column;
-  grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
+  /* grid-template-columns: repeat(auto-fit, minmax(65px, 1fr)); */
   gap: 10px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
+  align-items: left;
   padding: 20px;
 }
 
@@ -72,13 +122,13 @@ p {
   grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
   gap: 10px;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: left;
   padding: 20px;
 }
 
 .circulo {
-  width: 80px;
-  height: 80px;
+  width: 55px;
+  height: 55px;
   border-radius: 50%;
   display: flex;
   /* centraliza as imagens no centro dos círculos */
@@ -97,6 +147,8 @@ p {
   position: absolute;
   opacity: 0;
   cursor: pointer;
+  width: 15px;
+  height: 15px;
 }
 
 .circulo:hover {
@@ -105,7 +157,7 @@ p {
 
 /* mostra a opção selecionada */
 .circulo:has(input[type="radio"]:checked) {
-  box-shadow: 0 0 0 4px #0984e3;
+  box-shadow: 0 0 0 4px #3fd6e8;
   /* borda azul de destaque */
   transform: scale(1.05);
 }
@@ -114,9 +166,43 @@ p {
   background-color: #eef3f6;
   color: black;
   border-radius: 8px;
+  border: 12px;
+  width: 160px;
+  height: 30px;
+  margin-left: 265px;
 }
 
-.botao{
+.botao {
   display: flex;
-  justify-content: center;
+  justify-content: flex-start;
+}
+
+.lado-direito {
+  position: fixed;
+  flex-direction: column;
+  left: 0;
+  top: 8%;
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  object-fit: cover;
+}
+
+.prateleira {
+  position: fixed;
+  flex-direction: column;
+  right: 0;
+  top: 8%;
+  width: 50vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  object-fit: cover;
+}
+
+.prateleira img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
