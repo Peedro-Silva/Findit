@@ -1,4 +1,5 @@
 <?php
+
 require_once __DIR__ . "/init.php";
 
 ?>
@@ -10,7 +11,7 @@ require_once __DIR__ . "/init.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cadastrar Item</title>
-    <link rel="stylesheet" href="cadastraObj.css">
+    <link rel="stylesheet" href="./css/cadastraObj.css">
 </head>
 
 <body>
@@ -72,6 +73,37 @@ require_once __DIR__ . "/init.php";
                 <div class="grupo-campo">
                     <div class="linha-titulo">
                         <p class="ordem">4.</p>
+                        <label for="categoria">
+                            <h3>Categoria</h3>
+                        </label>
+                        <select name="categoria" id="categoria">
+                            <option value="">Todas</option>
+                            <option value="acessórios">Acessórios</option>
+                            <option value="bolsas e mochilas">Bolsas e Mochilas</option>
+                            <option value="documentos">Documentos</option>
+                            <option value="eletrônicos">Eletrônicos</option>
+                            <option value="roupas">Roupas</option>
+                            <option value="roupas">Outros</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grupo-campo">
+                    <div class="linha-titulo">
+                        <p class="ordem">5.</p>
+                        <label for="status">
+                            <h3>Status atual:</h3>
+                        </label>
+                        <select name="status" id="status">
+                            <option value="perdido">Perdido</option>
+                            <option value="encontrado">Encontrado</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="grupo-campo">
+                    <div class="linha-titulo">
+                        <p class="ordem">6.</p>
                         <label for="categoria">
                             <h3>Selecione a categoria a qual o objeto pertence:</h3>
                         </label>
@@ -212,8 +244,8 @@ require_once __DIR__ . "/init.php";
                     <br>
 
                     <label class="circulo">
-                        <input type="radio" name="emoji_escolhido" value="caneta: &#x1f58a" required>
-                        🖊
+                        <input type="radio" name="emoji_escolhido" value="caneta: &#x1F58A" required>
+                        🖊️
                     </label>
                     <br>
 
@@ -239,7 +271,7 @@ require_once __DIR__ . "/init.php";
     </div>
 
     <div class="prateleira">
-        <img src="img/prateleira.jpg" alt="prateleira com objetos guardados">
+        <img src="imagens/prateleira.jpg" alt="prateleira com objetos guardados">
     </div>
 </body>
 

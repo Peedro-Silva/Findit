@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,11 +8,11 @@
 
 body {
   background-color: white;
-  font-family: 'Momo Trust Display', sans-serif;
+  font-family: "Momo Trust Display", sans-serif;
 }
 
 header {
-  background-color: #ffffff;
+  background-color: black;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -32,7 +34,7 @@ header {
 
 .menu a {
   text-decoration: none;
-  color: #333333;
+  color: #eef3f6;
   font-size: 16px;
   font-weight: 500;
 }
@@ -53,6 +55,8 @@ h2 {
   justify-content: left;
   display: flex;
   margin-left: 55px;
+  color: black;
+  font-size: 20px;
 }
 
 
@@ -60,16 +64,16 @@ h2 {
 .linha-titulo {
   display: flex;
   align-items: center;
-  margin-left: 35px;
+  margin-left: 105px;
   /* Alinha o número e o texto verticalmente no centro */
   gap: 8px;
   /* Espaço horizontal entre o número e a frase */
   margin-top: 15px;
-  /* Espaço superior para separar dos blocos de cima */
 }
 
 .ordem {
   margin-left: 10px;
+  font-weight: bold;
 }
 
 .formulario {
@@ -86,7 +90,9 @@ h2 {
 
 .grupo-campo input {
   width: 400px;
-  margin-left: 48px;
+  margin-left: 110px;
+  height: 25px;
+
 }
 
 .cadastro {
@@ -94,6 +100,14 @@ h2 {
   display: flex;
   flex-direction: column;
   width: fit-content;
+}
+
+select {
+  height: 28px;
+  border-radius: 10px;
+  font-family: "Momo Trust Display", sans-serif;
+  color: black;
+  border-width: 2px;
 }
 
 .resposta {
@@ -114,6 +128,7 @@ h2 {
   justify-content: left;
   align-items: left;
   padding: 20px;
+  margin-bottom: 0.05px;
 }
 
 .oito {
@@ -163,13 +178,13 @@ h2 {
 }
 
 .cadastrar {
-  background-color: #eef3f6;
+  background-color: #3fd6e8;
   color: black;
   border-radius: 8px;
   border: 12px;
   width: 160px;
   height: 30px;
-  margin-left: 265px;
+  margin-left: 10px;
 }
 
 .botao {
@@ -182,7 +197,7 @@ h2 {
   flex-direction: column;
   left: 0;
   top: 8%;
-  width: 50vw;
+  width: 40vw;
   height: 100vh;
   display: flex;
   align-items: center;
@@ -193,7 +208,7 @@ h2 {
   position: fixed;
   flex-direction: column;
   right: 0;
-  top: 8%;
+  top: 7.8%;
   width: 50vw;
   height: 100vh;
   display: flex;
@@ -205,4 +220,5 @@ h2 {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  border-radius: 25px;
 }
