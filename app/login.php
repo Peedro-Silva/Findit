@@ -10,13 +10,17 @@ require_once __DIR__ . "/init.php";
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | findIt</title>
-    <link rel="stylesheet" href="/Findit/app/css/login.css">
+    <link rel="stylesheet" href="/css/login.css">
 </head>
 
 <body>
-    <header class="metade">
+    <header class="header-top">
         <div id="logo">
-            <img src="/Findit/app/css/imagens/logoLight.png" alt="Logo findIt">
+            <img src="/css/imagens/logoLight.png" alt="Logo findIt">
+        </div>
+        <div class="header-badge">
+            <span class="pulse-dot"></span>
+            <span>+15 mil resgatados</span>
         </div>
     </header>
 
@@ -56,7 +60,7 @@ require_once __DIR__ . "/init.php";
             </div>
 
             <div class="right-panel">
-                <img src="/Findit/app/css/imagens/imgright.jpg" alt="Perdeu? A gente encontra.">
+                <img src="/css/imagens/imgright.jpg" alt="Perdeu? A gente encontra.">
             </div>
         </section>
     </main>
