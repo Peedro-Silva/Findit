@@ -27,11 +27,35 @@ foreach ($objetos as $o) {
     <link rel="stylesheet" href="./css/style-index.css">
 </head>
 
+<header>
+    <div class="logo">
+        <img src="imagens/logo.png">
+    </div>
+
+    <div class="menu">
+        <a href="perfil.html" class="btn-perfil">
+            <img src="imagens/perfil.png" alt="Perfil">
+        </a>
+        <a href="./sobre.php">Sobre</a>
+        <a href="./painelObjetos.php">Objetos guardados</a>
+        <a href="./faq.php">Dúvidas</a>
+        <a href="./contato.php">Contato</a>
+        <a href="./CadastrarItem.php" class="btn-cadastrar"><button>+ Cadastrar item</button></a>
+    </div>
+</header>
+
 <body>
     <main>
         <div class="topo">
             <h1>O seu rastreador de TODOS os objetos! (sim, todos)</h1>
-            <a href="./login.php">Criar Conta</a>
+
+            <div class="demonstracao">
+                <img src="./imagens/tela-painel.png" alt="Tela do Painel de Objetos" width="900px">
+            </div>
+
+            <div class="criarConta">
+                <a href="./login.php">Criar Conta</a>
+            </div>
         </div>
 
         <h2>Como funciona?</h2>
@@ -67,7 +91,7 @@ foreach ($objetos as $o) {
             </div>
 
             <div class="bloco">
-                <p>João Clóvis</p>
+                <p>Mariana</p>
                 <p>⭐⭐⭐⭐⭐</p>
                 <div class="comentario">
                     <p>Sempre que o pessoal deixa chaves, capacetes ou guarda-chuvas jogados nos corredores, eu cadestro no sistema pra galera achar rápido. Ficou muito mais organizado do que aquela caixa de papelão no balcão.</p>
@@ -78,7 +102,7 @@ foreach ($objetos as $o) {
                 <p>José Britto</p>
                 <p>⭐⭐⭐⭐⭐</p>
                 <div class="comentario">
-                    <p>Esqueci meu Notebook na mesa do escritório. Uma menina achou, postou, e em 10 minutos a gente já estava indo busca. Salvou demais!</p>
+                    <p>Esqueci meu Notebook na mesa do escritório. Uma menina achou, postou, e em 10 minutos a gente já estava indo buscar. Salvou demais!</p>
                 </div>
             </div>
 
@@ -99,7 +123,7 @@ foreach ($objetos as $o) {
             </div>
 
             <div class="bloco">
-                <p>Júlio Junior</p>
+                <p>Yasmin</p>
                 <p>⭐⭐⭐⭐⭐</p>
                 <div class="comentario">
                     <p>Achei um fone sem fio no banco perto da biblioteca. Cliquei no botão 'Encontrei!' no card e compartilhei direto no grupo da minha sala no Zap. O dono me chamou na hora. O sistema funciona de verdade.</p>
@@ -120,7 +144,7 @@ foreach ($objetos as $o) {
         <div class="rodape-coluna">
             <p>Sistema de achados e perdidos. Devolvendo pertences de forma rápida e simples.</p>
         </div>
-        
+
         <div class="direitos">
             <p>&copy; 2026 Celeste System. Todos os direitos reservados.</p>
         </div>
