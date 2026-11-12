@@ -19,11 +19,11 @@
 
     <header>
         <div class="logo">
-            <img src="imagens/logo.png">
+            <img src="imagens/findit.png">
         </div>
 
         <div class="menu">
-            <a href="perfil.html" class="btn-perfil">
+            <a href="perfil.php" class="btn-perfil">
                 <img src="imagens/perfil.png" alt="Perfil">
             </a>
             <a href="sobre.php">Sobre</a>
@@ -34,7 +34,6 @@
         </div>
     </header>
 
-    <div class="conteiner">
         <main>
             <p>A FindIt nasceu da necessidade de encontrar objetos que foram esquecidos em empresas, visando a facilidade e agilidade de identificação deles por um único meio, sem que cada empresa tenha que ter um achados e perdidos. Assim surgiu a nossa empresa, a partir da parceria de diversas empresas.</p>
 
@@ -44,4 +43,3 @@
             <h2>Missão e Comprometimento</h2>
             <p><strong>Hoje, a nossa plataforma simplifica a devolução de itens esquecidos, conectando parceiros e utilizadores numa rede integrada de apoio. Continuamos a expandir a nossa presença para garantir que cada objeto perdido retorne ao dono o mais rápido possível.</strong></p>
         </main>
-    </div>

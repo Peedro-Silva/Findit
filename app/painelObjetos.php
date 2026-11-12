@@ -48,7 +48,7 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
     </div>
 
     <div class="menu">
-        <a href="perfil.html" class="btn-perfil">
+        <a href="perfil.php" class="btn-perfil">
             <img src="imagens/perfil.png" alt="Perfil">
         </a>
         <a href="./sobre.php">Sobre</a>
