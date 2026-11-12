@@ -24,11 +24,11 @@
             <a href="perfil.html" class="btn-perfil">
                 <img src="imagens/perfil.png" alt="Perfil">
             </a>
-            <a href="sobre.html">Sobre</a>
-            <a href=".html">Objetos guardados</a>
-            <a href="faq.html">Dúvidas</a>
-            <a href="contato.html">Contato</a>
-            <a href="CadastrarItem.html" class="btn-cadastrar"><button>+ Cadastrar item</button></a>
+            <a href="./sobre.php">Sobre</a>
+            <a href="./painelObjetos.php">Objetos guardados</a>
+            <a href="./faq.php">Dúvidas</a>
+            <a href="./contato.php">Contato</a>
+            <a href="./CadastrarItem.php" class="btn-cadastrar"><button>+ Cadastrar item</button></a>
         </div>
     </header>
 

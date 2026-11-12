@@ -44,7 +44,7 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
 
 <header>
     <div class="logo">
-        <img src="imagens/logo.png">
+        <a href="./index.php"><img src="imagens/logo.png"></a>
     </div>
 
     <div class="menu">
@@ -53,7 +53,7 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
         </a>
         <a href="./sobre.php">Sobre</a>
         <a href="./painelObjetos.php">Objetos guardados</a>
-        <a href="./faq.html">Dúvidas</a>
+        <a href="./faq.php">Dúvidas</a>
         <a href="./contato.php">Contato</a>
         <a href="./CadastrarItem.php" class="btn-cadastrar"><button>+ Cadastrar item</button></a>
     </div>
@@ -113,10 +113,7 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
                     </div>
                     <?php if ($o['status_objeto'] == 'Perdido'): ?>
                         <div class="botao">
-                            <form method="post" action="encontrei.php">
-                                <input type="hidden" name="id" value="<?= $o['id'] ?>">
-                                <button type="submit">Encontrei!!</button>
-                            </form>
+                            <a href="encontrei.php?id=<?= $o['idObjeto'] ?>">Encontrei!!</a>
 
                             <?php
                             $texto = "Objeto perdido: {$o['nome']} - {$o['descricao']}. Viu por aí? Acesse o Findit!";
@@ -126,9 +123,9 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
                                 <a href="<?= htmlspecialchars($link) ?>" target="_blank" rel="noopener">Compartilhar</a>
                             </div>
                         </div>
-                        <?php endif; ?>
+                    <?php endif; ?>
                 </div>
-        <?php endforeach; ?>
+            <?php endforeach; ?>
         </div>
 
 

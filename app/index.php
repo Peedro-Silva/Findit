@@ -48,14 +48,14 @@ foreach ($objetos as $o) {
     <main>
         <div class="topo">
             <h1>O seu rastreador de TODOS os objetos! (sim, todos)</h1>
+        </div>
 
-            <div class="demonstracao">
-                <img src="./imagens/tela-painel.png" alt="Tela do Painel de Objetos" width="900px">
-            </div>
+        <div class="demonstracao">
+            <img src="./imagens/tela-painel.png" alt="Tela do Painel de Objetos" width="900px">
+        </div>
 
-            <div class="criarConta">
-                <a href="./login.php">Criar Conta</a>
-            </div>
+        <div class="criarConta">
+            <a href="./login.php">Criar Conta</a>
         </div>
 
         <h2>Como funciona?</h2>

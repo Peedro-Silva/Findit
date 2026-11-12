@@ -11,7 +11,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FindIt - Perguntas Frequentes</title>
-    <link rel="stylesheet" href="css/faq.css">
+    <link rel="stylesheet" href="./css/faq.css">
 </head>
 
 <body>
@@ -25,11 +25,11 @@
             <a href="perfil.html" class="btn-perfil">
                 <img src="imagens/perfil.png" alt="Perfil">
             </a>
-            <a href="sobre.html">Sobre</a>
-            <a href=".html">Objetos guardados</a>
-            <a href="faq.html">Dúvidas</a>
-            <a href="contato.html">Contato</a>
-            <a href="CadastrarItem.html"><button>+ Cadastrar item</button></a>
+            <a href="./sobre.php">Sobre</a>
+            <a href="./painelObjetos.php">Objetos guardados</a>
+            <a href="./faq.php">Dúvidas</a>
+            <a href="./contato.php">Contato</a>
+            <a href="./CadastrarItem.php" class="btn-cadastrar"><button>+ Cadastrar item</button></a>
         </div>
     </header>
 
