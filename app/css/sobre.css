@@ -1,13 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Momo+Trust+Display&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
 
 
 body {
     background-color: #f4f7fa;
+    font-family: "Momo Trust Display", sans-serif;
     color: #ffffff;
     padding-bottom: 50px;
 }
@@ -50,39 +52,32 @@ header {
 }
 
 .menu a {
-   text-decoration: none;
+    text-decoration: none;
     color: #fffefe;
     font-size: 16px;
     font-weight: 500;
 }
 
 .menu button {
-     background-color: #3b3b3b;
-    color: #ffffff;
+    background-color:#eef3f6;
+    color: #000000;
     border: none;
     padding: 10px 18px;
     border-radius: 20px;
     cursor: pointer;
     font-size: 15px;
+     font-family: 'Momo Trust Display', sans-serif;
 }
 
 main {
     padding: 150px;
-   
-}
+    
 
-.container {
-    max-width: 900px;
-    margin: 40px auto;
-    padding: 100px;
-    border: 10px;
-    background-color: #7d7e7e;
-    border-radius: 100px;
-    align-items: center;     
+
 }
 
 
-p:first-of-type {
+p {
     max-width: 1000px;
     margin: 40px auto 20px auto;
     padding: 0 30px;
@@ -104,7 +99,7 @@ h2 {
     color: #000000;
 }
 
-h2 + p {
+h2+p {
     max-width: 1000px;
     margin: 0 auto 30px auto;
     padding: 0 30px;
@@ -113,6 +108,3 @@ h2 + p {
     font-weight: normal;
     color: #000000;
 }
-
-
-

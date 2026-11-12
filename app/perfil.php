@@ -16,18 +16,21 @@ require_once __DIR__ . "/init.php";
 <body>
        <header>
         <div class="logo">
-            <img src="imagens/logo.png">
+            <img src="imagens/findit.png">
         </div>
-        
+
         <div class="menu">
-                <a href="perfil.php"><img src="imagens/perfil.png"></a>
-                <a href="sobre.php">Sobre</a>
-                <a href=".html">Objetos guardados</a>
-                <a href="faq.php">Dúvidas</a>
-                <a href="contato.html">Contato</a>
-                <button class="cadastraObj.php">+ Cadastrar item</button>
+            <a href="perfil.php" class="btn-perfil">
+                <img src="imagens/perfil.png" alt="Perfil">
+            </a>
+            <a href="sobre.php">Sobre</a>
+            <a href=".html">Objetos guardados</a>
+            <a href="faq.php">Dúvidas</a>
+            <a href="contato.php">Contato</a>
+            <a href="CadastrarItem.html" class="btn-cadastrar"><button>+ Cadastrar item</button></a>
         </div>
     </header>
+
      <br>
      <br>
      <br>
