@@ -39,47 +39,44 @@ header {
   font-weight: 500;
 }
 
-.menu button {
+.menu a.btn-cadastrar {
   background-color: #eef3f6;
   color: black;
-  border: none;
   padding: 10px 18px;
   border-radius: 20px;
-  cursor: pointer;
   font-size: 15px;
+  font-weight: 400;
+  cursor: pointer;
 }
 
-h2 {
+h3 {
   padding: 8px;
-  align-items: left;
-  justify-content: left;
   display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
   margin-left: 55px;
   color: black;
   font-size: 20px;
 }
 
-
-
 .linha-titulo {
   display: flex;
   align-items: center;
-  margin-left: 105px;
-  /* Alinha o número e o texto verticalmente no centro */
+  /* alinha o número e o texto verticalmente no centro */
   gap: 8px;
-  /* Espaço horizontal entre o número e a frase */
+  /* espaço horizontal entre o número e a frase */
+  margin-left: 110px;
   margin-top: 15px;
 }
 
 .ordem {
-  margin-left: 10px;
-  font-weight: bold;
+  margin-left: 0;
 }
 
 .formulario {
   margin: 5px;
-  display: flex;
   margin-left: 15px;
+  display: flex;
   flex-direction: column;
 }
 
@@ -87,12 +84,10 @@ h2 {
   margin-bottom: 15px;
 }
 
-
 .grupo-campo input {
   width: 400px;
   margin-left: 110px;
   height: 25px;
-
 }
 
 .cadastro {
@@ -115,29 +110,25 @@ select {
   color: #2a303a;
   display: block;
   margin-top: 5px;
-  /* Deixa o input logo abaixo da frase */
-  width: 100%;
+  /* deixa o input logo abaixo da frase */
 }
 
 .circulos-container {
   display: flex;
   flex-direction: column;
-  /* grid-template-columns: repeat(auto-fit, minmax(65px, 1fr)); */
   gap: 10px;
   flex-wrap: wrap;
-  justify-content: left;
-  align-items: left;
+  justify-content: flex-start;
+  align-items: flex-start;
   padding: 20px;
-  margin-bottom: 0.05px;
 }
 
 .oito {
   display: flex;
   flex-direction: row;
-  grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
   gap: 10px;
   flex-wrap: wrap;
-  justify-content: left;
+  justify-content: flex-start;
   padding: 20px;
 }
 
@@ -146,7 +137,7 @@ select {
   height: 55px;
   border-radius: 50%;
   display: flex;
-  /* centraliza as imagens no centro dos círculos */
+  /* centraliza os emojis no centro dos círculos */
   align-items: center;
   justify-content: center;
   font-size: 36px;
@@ -157,7 +148,7 @@ select {
   background-color: #eef3f6;
 }
 
-/* Esconde o input original para aparecer apenas o emoji */
+/* esconde o input original para aparecer apenas o emoji */
 .circulo input[type="radio"] {
   position: absolute;
   opacity: 0;
@@ -177,43 +168,44 @@ select {
   transform: scale(1.05);
 }
 
+.botao {
+  display: flex;
+  justify-content: flex-start;
+  margin-left: 125px; /* altere aqui para mover o botão */
+  margin-top: 10px;
+  margin-bottom: 30px;
+}
+
 .cadastrar {
   background-color: #3fd6e8;
   color: black;
   border-radius: 8px;
-  border: 12px;
+  border: none;
   width: 160px;
-  height: 30px;
-  margin-left: 10px;
+  margin-left: 125px;
+  height: 36px;
+  cursor: pointer;
+  font-family: "Momo Trust Display", sans-serif;
 }
 
-.botao {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.lado-direito {
+.lado-esquerdo {
   position: fixed;
-  flex-direction: column;
   left: 0;
-  top: 8%;
+  top: 70px;
   width: 40vw;
-  height: 100vh;
   display: flex;
+  flex-direction: column;
   align-items: center;
-  object-fit: cover;
 }
 
 .prateleira {
   position: fixed;
-  flex-direction: column;
   right: 0;
-  top: 7.8%;
+  top: 70px;
   width: 50vw;
-  height: 100vh;
+  height: calc(100vh - 70px);
   display: flex;
   align-items: center;
-  object-fit: cover;
 }
 
 .prateleira img {
