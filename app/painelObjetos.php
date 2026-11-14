@@ -49,7 +49,7 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
         <a href="./index.php"><img src="imagens/findit-white.png"></a>
     </div>
 
-    <div class="menu">
+    <nav class="menu">
         <a href="perfil.php" class="btn-perfil">
             <img src="imagens/perfil.png" alt="Perfil">
         </a>
@@ -58,7 +58,7 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
         <a href="./faq.php">Dúvidas</a>
         <a href="./FormContato.php">Contato</a>
         <a href="./CadastrarItem.php" class="btn-cadastrar"><button>+ Cadastrar item</button></a>
-    </div>
+    </nav>
 </header>
 
 <body>

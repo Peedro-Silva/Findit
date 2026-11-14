@@ -9,9 +9,7 @@
 body {
   background-color: white;
   font-family: "Momo Trust Display", sans-serif;
-  /* ALTERAÇÃO: a foto absoluta se posiciona em relação ao body */
   position: relative;
-  /* garante que a página tenha pelo menos a altura da tela */
   min-height: 100vh;
 }
 
@@ -70,8 +68,6 @@ header {
 h2 {
   padding: 8px;
   display: flex;
-  /* ALTERAÇÃO: removidos "align-items: left" e "justify-content: left" (valores inválidos em flexbox).
-     Como o padrão já é flex-start, não precisa de nada no lugar. */
   margin-left: 55px;
   color: black;
   font-size: 20px;
@@ -81,9 +77,7 @@ h2 {
   display: flex;
   align-items: center;
   margin-left: 105px;
-  /* Alinha o número e o texto verticalmente no centro */
   gap: 8px;
-  /* Espaço horizontal entre o número e a frase */
   margin-top: 15px;
 }
 
@@ -129,8 +123,6 @@ select {
   color: #2a303a;
   display: block;
   margin-top: 5px;
-  /* Deixa o input logo abaixo da frase */
-  /* ALTERAÇÃO: removido "width: 100%", que conflitava com o "width: 400px" de .grupo-campo input */
 }
 
 .circulos-container {
@@ -138,8 +130,6 @@ select {
   flex-direction: column;
   gap: 10px;
   flex-wrap: wrap;
-  /* ALTERAÇÃO: removidos "justify-content: left" e "align-items: left" (inválidos);
-     removido também "margin-bottom: 0.05px" (sem efeito prático) e o grid-template comentado */
   padding: 20px;
 }
 
@@ -149,8 +139,6 @@ select {
   gap: 10px;
   flex-wrap: wrap;
   padding: 20px;
-  /* ALTERAÇÃO: removido "grid-template-columns" (só funciona com display: grid)
-     e "justify-content: left" (inválido; o padrão já é flex-start) */
 }
 
 .circulo {
@@ -158,7 +146,6 @@ select {
   height: 55px;
   border-radius: 50%;
   display: flex;
-  /* centraliza as imagens no centro dos círculos */
   align-items: center;
   justify-content: center;
   font-size: 36px;
@@ -169,7 +156,6 @@ select {
   background-color: #eef3f6;
 }
 
-/* Esconde o input original para aparecer apenas o emoji */
 .circulo input[type="radio"] {
   position: absolute;
   opacity: 0;
@@ -182,46 +168,37 @@ select {
   transform: scale(1.1);
 }
 
-/* mostra a opção selecionada */
 .circulo:has(input[type="radio"]:checked) {
-  box-shadow: 0 0 0 4px #3fd6e8;
-  /* borda azul de destaque */
+  box-shadow: 0 0 0 3px #3fd6e8;
   transform: scale(1.05);
 }
 
-.cadastrar {
+.botao {
   background-color: #3fd6e8;
   color: black;
   border-radius: 8px;
-  /* ALTERAÇÃO: "border: 12px" era inválido (faltava o estilo). Trocado por "border: none" */
   border: none;
   width: 160px;
   height: 30px;
-  /* ALTERAÇÃO: o botão agora está dentro do .formulario (flex em coluna),
-     então ajustei as margens para alinhar com os campos e dar espaço embaixo */
-  margin: 10px 0 40px 25px;
   cursor: pointer;
   font-family: "Momo Trust Display", sans-serif;
+  align-self: center;
+  margin: 10px 0 40px;
 }
 
-/* ALTERAÇÃO: removida a classe .botao, pois o segundo <form> não existe mais */
-
 .lado-direito {
-  /* ALTERAÇÃO: sem position fixed, sem height e sem overflow.
-     A coluna agora faz parte do fluxo normal e a rolagem é a da página (barra na borda direita) */
   width: 40vw;
-  padding-bottom: 40px; /* espaço no fim para o botão não colar na borda */
+  padding-bottom: 40px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
 }
 
 .prateleira {
-  /* ALTERAÇÃO: absolute em vez de fixed, então a foto rola junto com a página */
   position: absolute;
   right: 0;
-  top: 70px;      /* logo abaixo do header */
-  bottom: 0;      /* vai até o fim da página, acompanhando a altura do formulário */
+  top: 70px;      
+  bottom: 0;      
   width: 50vw;
 }
 

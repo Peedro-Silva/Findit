@@ -32,7 +32,7 @@ foreach ($objetos as $o) {
         <a href="./index.php"><img src="imagens/findit-white.png"></a>
     </div>
 
-    <div class="menu">
+    <nav class="menu">
         <a href="perfil.php" class="btn-perfil">
             <img src="imagens/perfil.png" alt="Perfil">
         </a>
@@ -41,7 +41,7 @@ foreach ($objetos as $o) {
         <a href="./faq.php">Dúvidas</a>
         <a href="./contato.php">Contato</a>
         <a href="./cadastraObj.php" class="btn-cadastrar"><button>+ Cadastrar item</button></a>
-    </div>
+    </nav>
 </header>
 
 <body>
