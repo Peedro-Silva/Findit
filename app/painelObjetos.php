@@ -28,6 +28,8 @@ if ($status !== '') {
 $where   = $condicoes ? implode(' AND ', $condicoes) : null;
 $objetos = readAll($pdo, 'objetos', $where, $params);
 
+
+
 ?>
 
 <!doctype html>
@@ -77,7 +79,7 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
                         <option value="documentos">Documentos</option>
                         <option value="eletrônicos">Eletrônicos</option>
                         <option value="roupas">Roupas</option>
-                        <option value="roupas">Outros</option>
+                        <option value="outros">Outros</option>
                     </select>
 
                     <label for="status">Status do Objeto</label>
@@ -110,20 +112,20 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
                         <p>Descrição: <?= htmlspecialchars($o['descricao']) ?></p>
                         <p>Status: <?= htmlspecialchars($o['status_objeto']) ?></p>
                         <p>Categoria: <?= htmlspecialchars($o['categoria']) ?></p>
-                    </div>
-                    <?php if ($o['status_objeto'] == 'Perdido'): ?>
-                        <div class="botao">
-                            <a href="encontrei.php?id=<?= $o['idObjeto'] ?>">Encontrei!!</a>
+                        <?php if ($o['status_objeto'] == 'Perdido'): ?>
+                            <div class="botao">
+                                <a href="encontrei.php?id=<?= $o['idObjeto'] ?>" class="botaoEncontrei">Encontrei!!</a>
 
-                            <?php
-                            $texto = "Objeto perdido: {$o['nome']} - {$o['descricao']}. Viu por aí? Acesse o Findit!";
-                            $link  = 'https://wa.me/?text=' . urlencode($texto);
-                            ?>
-                            <div class="compartilhar">
-                                <a href="<?= htmlspecialchars($link) ?>" target="_blank" rel="noopener">Compartilhar</a>
+                                <?php
+                                $texto = "Objeto perdido: {$o['nome']} - {$o['descricao']}. Viu por aí? Acesse o Findit!";
+                                $link  = 'https://wa.me/?text=' . urlencode($texto);
+                                ?>
+
+                                <a href="<?= htmlspecialchars($link) ?>" target="_blank" rel="noopener" class="botaoCompartilhar">Compartilhar</a>
+
                             </div>
-                        </div>
-                    <?php endif; ?>
+                        <?php endif; ?>
+                    </div>
                 </div>
             <?php endforeach; ?>
         </div>

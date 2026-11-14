@@ -1,5 +1,4 @@
 CREATE DATABASE integrador CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
-CREATE DATABASE integrador CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE integrador;
 
 -- ========== TABELAS ==========
@@ -7,12 +6,7 @@ USE integrador;
 CREATE TABLE usuario(
     idUsuario INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
-CREATE TABLE usuario(
-    idUsuario INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(100) NOT NULL,
     telefone VARCHAR(15),
-    email VARCHAR(100) NOT NULL UNIQUE,
-    senha VARCHAR(100) NOT NULL
     email VARCHAR(100) NOT NULL UNIQUE,
     senha VARCHAR(100) NOT NULL
 );
@@ -21,20 +15,12 @@ CREATE TABLE objetos(
     idObjeto INT PRIMARY KEY AUTO_INCREMENT,
     nome VARCHAR(100) NOT NULL,
     descricao VARCHAR(255),
-    categoria ENUM('Acessórios', 'Bolsas e Mochilas', 'Documentos', 'Eletrônicos', 'Roupas', 'Outros') NOT NULL,
-    imagemObjeto VARCHAR(20),
-    status_objeto ENUM('Encontrado', 'Perdido', 'Abandonado') NOT NULL
-    idObjeto INT PRIMARY KEY AUTO_INCREMENT,
-    nome VARCHAR(100) NOT NULL,
-    descricao VARCHAR(255),
+    localEncontrado VARCHAR(150),
     categoria ENUM('Acessórios', 'Bolsas e Mochilas', 'Documentos', 'Eletrônicos', 'Roupas', 'Outros') NOT NULL,
     imagemObjeto VARCHAR(20),
     status_objeto ENUM('Encontrado', 'Perdido', 'Abandonado') NOT NULL
 );
 
-CREATE TABLE pontoColeta(
-    idEndereco INT PRIMARY KEY AUTO_INCREMENT,
-    logradouro VARCHAR(100) NOT NULL,
 CREATE TABLE pontoColeta(
     idEndereco INT PRIMARY KEY AUTO_INCREMENT,
     logradouro VARCHAR(100) NOT NULL,
@@ -54,18 +40,18 @@ CREATE TABLE retirada(
     FOREIGN KEY (nomeUsuario)   REFERENCES usuario(idUsuario),
     FOREIGN KEY (nomeObjeto)    REFERENCES objetos(idObjeto),
     FOREIGN KEY (localEndereco) REFERENCES pontoColeta(idEndereco)
+);
+
+CREATE TABLE mensagem(
+    idMensagem INT PRIMARY KEY AUTO_INCREMENT,
     nomeUsuario INT NOT NULL,
-    nomeObjeto INT NOT NULL,
-    localEndereco INT NOT NULL,
-    descricao VARCHAR(255),
-    FOREIGN KEY (nomeUsuario)   REFERENCES usuario(idUsuario),
-    FOREIGN KEY (nomeObjeto)    REFERENCES objetos(idObjeto),
-    FOREIGN KEY (localEndereco) REFERENCES pontoColeta(idEndereco)
+    assunto ENUM('Suporte', 'Sugestão', 'Reclamação') NOT NULL,
+    mensagem TEXT NOT NULL,
+    FOREIGN KEY (nomeUsuario) REFERENCES usuario(idUsuario)
 );
 
 -- ========== DADOS ==========
 
-INSERT INTO usuario (nome, telefone, email, senha) VALUES
 INSERT INTO usuario (nome, telefone, email, senha) VALUES
 ('Ana Souza',      '11987654321', 'ana.souza@email.com',      SHA2('ana@123', 256)),
 ('Bruno Lima',     '11976543210', 'bruno.lima@email.com',     SHA2('bruno@123', 256)),
@@ -73,74 +59,40 @@ INSERT INTO usuario (nome, telefone, email, senha) VALUES
 ('Diego Santos',   '11954321098', 'diego.santos@email.com',   SHA2('diego@123', 256)),
 ('Elisa Ferreira', '11943210987', 'elisa.ferreira@email.com', SHA2('elisa@123', 256));
 
-INSERT INTO objetos (nome, descricao, categoria, imagemObjeto, status_objeto) VALUES
-('Carteira',           'Carteira de couro preta com documentos',        'Documentos',        '💳', 'Perdido'),
-('Celular',            'iPhone com capa azul',                          'Eletrônicos',       '📱', 'Encontrado'),
-('Chave',              'Chaveiro com 3 chaves e um pingente',           'Acessórios',        '🔑', 'Encontrado'),
-('Mochila',            'Mochila cinza com notebook dentro',             'Bolsas e Mochilas', '👜', 'Perdido'),
-('Guarda-chuva',       'Guarda-chuva preto automático',                 'Acessórios',        '🌂', 'Abandonado'),
-('Óculos de grau',     'Óculos com armação preta e estojo azul',        'Acessórios',        '👓', 'Perdido'),
-('Relógio',            'Relógio de pulso prata com pulseira de metal',  'Acessórios',        '⌚', 'Encontrado'),
-('Bolsa',              'Bolsa marrom de alça longa com zíper dourado',  'Bolsas e Mochilas', '👜', 'Perdido'),
-('Mochila escolar',    'Mochila azul com estojo e cadernos dentro',     'Bolsas e Mochilas', '👜', 'Encontrado'),
-('Pochete',            'Pochete preta com fecho de pressão',            'Bolsas e Mochilas', '👜', 'Perdido'),
-('RG',                 'RG em nome de Marcos Oliveira',                 'Documentos',        '💳', 'Encontrado'),
-('CNH',                'Carteira de habilitação categoria B',           'Documentos',        '💳', 'Perdido'),
-('Cartão de crédito',  'Cartão Nubank roxo',                            'Documentos',        '💳', 'Encontrado'),
-('Fone de ouvido',     'Fone bluetooth branco na caixinha',             'Eletrônicos',       '🎧', 'Perdido'),
-('Notebook',           'Notebook cinza de 14 polegadas com capa',       'Eletrônicos',       '💻', 'Encontrado'),
-('Carregador',         'Carregador de celular branco com cabo USB-C',   'Eletrônicos',       '📱', 'Perdido'),
-('Casaco',             'Casaco de moletom cinza tamanho M',             'Roupas',            '🧥', 'Abandonado'),
-('Boné',               'Boné preto com aba reta',                       'Roupas',            '🧢', 'Perdido'),
-('Cachecol',           'Cachecol de lã vermelho',                       'Roupas',            '🧥', 'Abandonado'),
-('Garrafa térmica',    'Garrafa térmica azul de 500 ml',                'Outros',            '🥤', 'Perdido'),
-('Bola de futebol',    'Bola de futebol branca e preta',                'Outros',            '⚽', 'Encontrado'),
-('Patins',             'Patins rosa tamanho 36',                        'Outros',            '🛼', 'Perdido'),
-('Videogame portátil', 'Videogame portátil preto com capa',             'Outros',            '🎮', 'Encontrado'),
-('Ursinho de pelúcia', 'Ursinho marrom com laço vermelho',              'Outros',            '🧸', 'Perdido'),
-('Caixa de chocolates','Caixa de chocolates fechada',                   'Outros',            '🍫', 'Abandonado'),
-('Batom',              'Batom vermelho na necessaire',                  'Acessórios',        '💄', 'Perdido'),
-('Anel',               'Anel dourado com pedra azul',                   'Acessórios',        '💍', 'Encontrado'),
-('Câmera',             'Câmera digital preta com alça',                 'Eletrônicos',       '📷', 'Perdido'),
-('Livro',              'Livro de capa azul com marca-página',           'Documentos',        '📚', 'Encontrado'),
-('Agenda',             'Agenda preta com anotações',                    'Documentos',        '📓', 'Perdido'),
-('Caneta',             'Caneta tinteiro prateada',                      'Documentos',        '🖊', 'Abandonado'),
-('Martelo',            'Martelo com cabo de madeira',                   'Outros',            '🔨', 'Perdido');
-INSERT INTO objetos (nome, descricao, categoria, imagemObjeto, status_objeto) VALUES
-('Carteira',           'Carteira de couro preta com documentos',        'Documentos',        '💳', 'Perdido'),
-('Celular',            'iPhone com capa azul',                          'Eletrônicos',       '📱', 'Encontrado'),
-('Chave',              'Chaveiro com 3 chaves e um pingente',           'Acessórios',        '🔑', 'Encontrado'),
-('Mochila',            'Mochila cinza com notebook dentro',             'Bolsas e Mochilas', '👜', 'Perdido'),
-('Guarda-chuva',       'Guarda-chuva preto automático',                 'Acessórios',        '🌂', 'Abandonado'),
-('Óculos de grau',     'Óculos com armação preta e estojo azul',        'Acessórios',        '👓', 'Perdido'),
-('Relógio',            'Relógio de pulso prata com pulseira de metal',  'Acessórios',        '⌚', 'Encontrado'),
-('Bolsa',              'Bolsa marrom de alça longa com zíper dourado',  'Bolsas e Mochilas', '👜', 'Perdido'),
-('Mochila escolar',    'Mochila azul com estojo e cadernos dentro',     'Bolsas e Mochilas', '👜', 'Encontrado'),
-('Pochete',            'Pochete preta com fecho de pressão',            'Bolsas e Mochilas', '👜', 'Perdido'),
-('RG',                 'RG em nome de Marcos Oliveira',                 'Documentos',        '💳', 'Encontrado'),
-('CNH',                'Carteira de habilitação categoria B',           'Documentos',        '💳', 'Perdido'),
-('Cartão de crédito',  'Cartão Nubank roxo',                            'Documentos',        '💳', 'Encontrado'),
-('Fone de ouvido',     'Fone bluetooth branco na caixinha',             'Eletrônicos',       '🎧', 'Perdido'),
-('Notebook',           'Notebook cinza de 14 polegadas com capa',       'Eletrônicos',       '💻', 'Encontrado'),
-('Carregador',         'Carregador de celular branco com cabo USB-C',   'Eletrônicos',       '📱', 'Perdido'),
-('Casaco',             'Casaco de moletom cinza tamanho M',             'Roupas',            '🧥', 'Abandonado'),
-('Boné',               'Boné preto com aba reta',                       'Roupas',            '🧢', 'Perdido'),
-('Cachecol',           'Cachecol de lã vermelho',                       'Roupas',            '🧥', 'Abandonado'),
-('Garrafa térmica',    'Garrafa térmica azul de 500 ml',                'Outros',            '🥤', 'Perdido'),
-('Bola de futebol',    'Bola de futebol branca e preta',                'Outros',            '⚽', 'Encontrado'),
-('Patins',             'Patins rosa tamanho 36',                        'Outros',            '🛼', 'Perdido'),
-('Videogame portátil', 'Videogame portátil preto com capa',             'Outros',            '🎮', 'Encontrado'),
-('Ursinho de pelúcia', 'Ursinho marrom com laço vermelho',              'Outros',            '🧸', 'Perdido'),
-('Caixa de chocolates','Caixa de chocolates fechada',                   'Outros',            '🍫', 'Abandonado'),
-('Batom',              'Batom vermelho na necessaire',                  'Acessórios',        '💄', 'Perdido'),
-('Anel',               'Anel dourado com pedra azul',                   'Acessórios',        '💍', 'Encontrado'),
-('Câmera',             'Câmera digital preta com alça',                 'Eletrônicos',       '📷', 'Perdido'),
-('Livro',              'Livro de capa azul com marca-página',           'Documentos',        '📚', 'Encontrado'),
-('Agenda',             'Agenda preta com anotações',                    'Documentos',        '📓', 'Perdido'),
-('Caneta',             'Caneta tinteiro prateada',                      'Documentos',        '🖊', 'Abandonado'),
-('Martelo',            'Martelo com cabo de madeira',                   'Outros',            '🔨', 'Perdido');
+INSERT INTO objetos (nome, descricao, localEncontrado, categoria, imagemObjeto, status_objeto) VALUES
+('Carteira',           'Carteira de couro preta com documentos',        'Estação Santo André',     'Documentos',        '💳', 'Perdido'),
+('Celular',            'iPhone com capa azul',                          'Parque Celso Daniel',     'Eletrônicos',       '📱', 'Encontrado'),
+('Chave',              'Chaveiro com 3 chaves e um pingente',           'Praça do Carmo',          'Acessórios',        '🔑', 'Encontrado'),
+('Mochila',            'Mochila cinza com notebook dentro',             'Terminal Vila Luzita',    'Bolsas e Mochilas', '👜', 'Perdido'),
+('Guarda-chuva',       'Guarda-chuva preto automático',                 'Biblioteca Municipal',    'Acessórios',        '🌂', 'Abandonado'),
+('Óculos de grau',     'Óculos com armação preta e estojo azul',        'Shopping ABC',            'Acessórios',        '👓', 'Perdido'),
+('Relógio',            'Relógio de pulso prata com pulseira de metal',  'Academia Centro',         'Acessórios',        '⌚', 'Encontrado'),
+('Bolsa',              'Bolsa marrom de alça longa com zíper dourado',  'Estação Santo André',     'Bolsas e Mochilas', '👜', 'Perdido'),
+('Mochila escolar',    'Mochila azul com estojo e cadernos dentro',     'Escola Estadual Centro',  'Bolsas e Mochilas', '👜', 'Encontrado'),
+('Pochete',            'Pochete preta com fecho de pressão',            'Parque Celso Daniel',     'Bolsas e Mochilas', '👜', 'Perdido'),
+('RG',                 'RG em nome de Marcos Oliveira',                 'Praça do Carmo',          'Documentos',        '💳', 'Encontrado'),
+('CNH',                'Carteira de habilitação categoria B',           'Shopping ABC',            'Documentos',        '💳', 'Perdido'),
+('Cartão de crédito',  'Cartão Nubank roxo',                            'Terminal Vila Luzita',    'Documentos',        '💳', 'Encontrado'),
+('Fone de ouvido',     'Fone bluetooth branco na caixinha',             'Academia Centro',         'Eletrônicos',       '🎧', 'Perdido'),
+('Notebook',           'Notebook cinza de 14 polegadas com capa',       'Biblioteca Municipal',    'Eletrônicos',       '💻', 'Encontrado'),
+('Carregador',         'Carregador de celular branco com cabo USB-C',   'Escola Estadual Centro',  'Eletrônicos',       '📱', 'Perdido'),
+('Casaco',             'Casaco de moletom cinza tamanho M',             'Estação Santo André',     'Roupas',            '🧥', 'Abandonado'),
+('Boné',               'Boné preto com aba reta',                       'Parque Celso Daniel',     'Roupas',            '🧢', 'Perdido'),
+('Cachecol',           'Cachecol de lã vermelho',                       'Praça do Carmo',          'Roupas',            '🧥', 'Abandonado'),
+('Garrafa térmica',    'Garrafa térmica azul de 500 ml',                'Academia Centro',         'Outros',            '🥤', 'Perdido'),
+('Bola de futebol',    'Bola de futebol branca e preta',                'Parque Celso Daniel',     'Outros',            '⚽', 'Encontrado'),
+('Patins',             'Patins rosa tamanho 36',                        'Praça do Carmo',          'Outros',            '🛼', 'Perdido'),
+('Videogame portátil', 'Videogame portátil preto com capa',             'Shopping ABC',            'Outros',            '🎮', 'Encontrado'),
+('Ursinho de pelúcia', 'Ursinho marrom com laço vermelho',              'Escola Estadual Centro',  'Outros',            '🧸', 'Perdido'),
+('Caixa de chocolates','Caixa de chocolates fechada',                   'Terminal Vila Luzita',    'Outros',            '🍫', 'Abandonado'),
+('Batom',              'Batom vermelho na necessaire',                  'Shopping ABC',            'Acessórios',        '💄', 'Perdido'),
+('Anel',               'Anel dourado com pedra azul',                   'Praça do Carmo',          'Acessórios',        '💍', 'Encontrado'),
+('Câmera',             'Câmera digital preta com alça',                 'Parque Celso Daniel',     'Eletrônicos',       '📷', 'Perdido'),
+('Livro',              'Livro de capa azul com marca-página',           'Biblioteca Municipal',    'Documentos',        '📚', 'Encontrado'),
+('Agenda',             'Agenda preta com anotações',                    'Escola Estadual Centro',  'Documentos',        '📓', 'Perdido'),
+('Caneta',             'Caneta tinteiro prateada',                      'Biblioteca Municipal',    'Documentos',        '🖊', 'Abandonado'),
+('Martelo',            'Martelo com cabo de madeira',                   'Terminal Vila Luzita',    'Outros',            '🔨', 'Perdido');
 
-INSERT INTO pontoColeta (logradouro, numero, bairro, cidade, estado, pais) VALUES
 INSERT INTO pontoColeta (logradouro, numero, bairro, cidade, estado, pais) VALUES
 ('Rua das Flores',       120, 'Centro',        'Santo André',           'São Paulo', 'Brasil'),
 ('Avenida Industrial',   450, 'Jardim',        'Santo André',           'São Paulo', 'Brasil'),

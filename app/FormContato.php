@@ -9,7 +9,7 @@
 <body>
     <header>
         <div class="logo">
-            <img src="imagens/logo.png">
+            <img src="imagens/findit.png">
         </div>
         
         <div class="menu">

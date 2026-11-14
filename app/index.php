@@ -29,7 +29,7 @@ foreach ($objetos as $o) {
 
 <header>
     <div class="logo">
-        <img src="imagens/logo.png">
+        <img src="imagens/findit.png">
     </div>
 
     <div class="menu">
@@ -54,8 +54,9 @@ foreach ($objetos as $o) {
             <img src="./imagens/tela-painel.png" alt="Tela do Painel de Objetos" width="900px">
         </div>
 
-        <div class="criarConta">
-            <a href="./login.php">Criar Conta</a>
+        <div class="conta">
+            <a href="./login.php" class="fazerLogin">fazer Login</a>
+            <a href="./cadastraConta.php" class="criarConta">Criar Conta</a>
         </div>
 
         <h2>Como funciona?</h2>
