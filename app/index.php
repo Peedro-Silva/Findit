@@ -29,7 +29,7 @@ foreach ($objetos as $o) {
 
 <header>
     <div class="logo">
-        <img src="imagens/findit.png">
+        <a href="./index.php"><img src="imagens/findit-white.png"></a>
     </div>
 
     <div class="menu">
@@ -40,7 +40,7 @@ foreach ($objetos as $o) {
         <a href="./painelObjetos.php">Objetos guardados</a>
         <a href="./faq.php">Dúvidas</a>
         <a href="./contato.php">Contato</a>
-        <a href="./CadastrarItem.php" class="btn-cadastrar"><button>+ Cadastrar item</button></a>
+        <a href="./cadastraObj.php" class="btn-cadastrar"><button>+ Cadastrar item</button></a>
     </div>
 </header>
 

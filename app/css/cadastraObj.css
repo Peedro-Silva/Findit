@@ -9,15 +9,32 @@
 body {
   background-color: white;
   font-family: "Momo Trust Display", sans-serif;
+  /* ALTERAÇÃO: a foto absoluta se posiciona em relação ao body */
+  position: relative;
+  /* garante que a página tenha pelo menos a altura da tela */
+  min-height: 100vh;
 }
 
 header {
-  background-color: black;
+  background-color: #000000;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 0 40px;
   height: 70px;
+}
+
+.logo {
+  height: 100%;
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 100%;
+  width: 170px;
+  object-fit: contain;
+  display: block;
 }
 
 .menu {
@@ -34,14 +51,15 @@ header {
 
 .menu a {
   text-decoration: none;
-  color: #eef3f6;
+  color: #ffffff;
   font-size: 16px;
   font-weight: 500;
 }
 
 .menu button {
-  background-color: #eef3f6;
-  color: black;
+  background-color: #ffffff;
+  font-family: "Momo Trust Display", sans-serif;
+  color: #000000;
   border: none;
   padding: 10px 18px;
   border-radius: 20px;
@@ -51,15 +69,13 @@ header {
 
 h2 {
   padding: 8px;
-  align-items: left;
-  justify-content: left;
   display: flex;
+  /* ALTERAÇÃO: removidos "align-items: left" e "justify-content: left" (valores inválidos em flexbox).
+     Como o padrão já é flex-start, não precisa de nada no lugar. */
   margin-left: 55px;
   color: black;
   font-size: 20px;
 }
-
-
 
 .linha-titulo {
   display: flex;
@@ -87,12 +103,10 @@ h2 {
   margin-bottom: 15px;
 }
 
-
 .grupo-campo input {
   width: 400px;
   margin-left: 110px;
   height: 25px;
-
 }
 
 .cadastro {
@@ -116,29 +130,27 @@ select {
   display: block;
   margin-top: 5px;
   /* Deixa o input logo abaixo da frase */
-  width: 100%;
+  /* ALTERAÇÃO: removido "width: 100%", que conflitava com o "width: 400px" de .grupo-campo input */
 }
 
 .circulos-container {
   display: flex;
   flex-direction: column;
-  /* grid-template-columns: repeat(auto-fit, minmax(65px, 1fr)); */
   gap: 10px;
   flex-wrap: wrap;
-  justify-content: left;
-  align-items: left;
+  /* ALTERAÇÃO: removidos "justify-content: left" e "align-items: left" (inválidos);
+     removido também "margin-bottom: 0.05px" (sem efeito prático) e o grid-template comentado */
   padding: 20px;
-  margin-bottom: 0.05px;
 }
 
 .oito {
   display: flex;
   flex-direction: row;
-  grid-template-columns: repeat(auto-fit, minmax(65px, 1fr));
   gap: 10px;
   flex-wrap: wrap;
-  justify-content: left;
   padding: 20px;
+  /* ALTERAÇÃO: removido "grid-template-columns" (só funciona com display: grid)
+     e "justify-content: left" (inválido; o padrão já é flex-start) */
 }
 
 .circulo {
@@ -181,39 +193,36 @@ select {
   background-color: #3fd6e8;
   color: black;
   border-radius: 8px;
-  border: 12px;
+  /* ALTERAÇÃO: "border: 12px" era inválido (faltava o estilo). Trocado por "border: none" */
+  border: none;
   width: 160px;
   height: 30px;
-  margin-left: 10px;
+  /* ALTERAÇÃO: o botão agora está dentro do .formulario (flex em coluna),
+     então ajustei as margens para alinhar com os campos e dar espaço embaixo */
+  margin: 10px 0 40px 25px;
+  cursor: pointer;
+  font-family: "Momo Trust Display", sans-serif;
 }
 
-.botao {
-  display: flex;
-  justify-content: flex-start;
-}
+/* ALTERAÇÃO: removida a classe .botao, pois o segundo <form> não existe mais */
 
 .lado-direito {
-  position: fixed;
-  flex-direction: column;
-  left: 0;
-  top: 8%;
+  /* ALTERAÇÃO: sem position fixed, sem height e sem overflow.
+     A coluna agora faz parte do fluxo normal e a rolagem é a da página (barra na borda direita) */
   width: 40vw;
-  height: 100vh;
+  padding-bottom: 40px; /* espaço no fim para o botão não colar na borda */
   display: flex;
-  align-items: center;
-  object-fit: cover;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .prateleira {
-  position: fixed;
-  flex-direction: column;
+  /* ALTERAÇÃO: absolute em vez de fixed, então a foto rola junto com a página */
+  position: absolute;
   right: 0;
-  top: 7.8%;
+  top: 70px;      /* logo abaixo do header */
+  bottom: 0;      /* vai até o fim da página, acompanhando a altura do formulário */
   width: 50vw;
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  object-fit: cover;
 }
 
 .prateleira img {
@@ -221,4 +230,5 @@ select {
   height: 100%;
   object-fit: cover;
   border-radius: 25px;
+  display: block;
 }

@@ -46,7 +46,7 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
 
 <header>
     <div class="logo">
-        <a href="./index.php"><img src="imagens/logo.png"></a>
+        <a href="./index.php"><img src="imagens/findit-white.png"></a>
     </div>
 
     <div class="menu">
@@ -56,7 +56,7 @@ $objetos = readAll($pdo, 'objetos', $where, $params);
         <a href="./sobre.php">Sobre</a>
         <a href="./painelObjetos.php">Objetos guardados</a>
         <a href="./faq.php">Dúvidas</a>
-        <a href="./contato.php">Contato</a>
+        <a href="./FormContato.php">Contato</a>
         <a href="./CadastrarItem.php" class="btn-cadastrar"><button>+ Cadastrar item</button></a>
     </div>
 </header>
